@@ -34,39 +34,5 @@ The computer uses a Simple As Possible (SAP) architecture, it consists of
 ## Microcode Instructions
 The control signals for each microcode instruction are generated with a ROM which contains each sub-instruction for each sub-pulse of the clock
 
+<img width="540" alt="Screenshot 2024-03-21 at 12 07 15" src="https://github.com/lluisvalerodelai/8-bit-Computer/assets/98460745/3d10dfae-35e9-4b88-9aa7-f43b2b0d34ca">
 
-Instruction     Step    Control Work (hexadecimal representation)
-                                        AI AO BI BO ΣO SU RI RO CO JMP CE MI II IO xx xx \
-Fetch - xxxx    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0 \
-                001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0 \
-
-LDA   - 0001    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
- -arg: addr     001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0  
-                010     0x0014          0  0  0  0  0  0  0  0  0  0   0  1  0  1  0  0
-                011     0x8100          1  0  0  0  0  0  0  1  0  0   0  0  0  0  0  0
-                
-ADD   - 0010    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
- -arg: addr     001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0
-                010     0x0014          0  0  0  0  0  0  0  0  0  0   0  1  0  1  0  0
-                011     0x2100          0  0  1  0  0  0  0  1  0  0   0  0  0  0  0  0
-                100     0x8800          1  0  0  0  1  0  0  0  0  0   0  0  0  0  0  0
-
-SUB   - 0011    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
- -arg: addr     001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0
-                010     0x0014          0  0  0  0  0  0  0  0  0  0   0  1  0  1  0  0
-                011     0x2100          0  0  1  0  0  0  0  1  0  0   0  0  0  0  0  0
-                100     0x8C00          1  0  0  0  1  1  0  0  0  0   0  0  0  0  0  0
-
-JMP   - 0100    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
- -arg: value    001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0
-                010     0x0014          0  0  0  0  0  0  0  0  0  0   0  1  0  1  0  0
-                011     0x0140          0  0  0  0  0  0  0  1  0  1   0  0  0  0  0  0
-
-STA   - 0101    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
- -arg: addr     001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0
-                010     0x0014          0  0  0  0  0  0  0  0  0  0   0  1  0  1  0  0
-                011     0x4200          0  1  0  0  0  0  1  0  0  0   0  0  0  0  0  0
-
-LDI   - 0110    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
- -arg: value    001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0
-                010     0x8004          1  0  0  0  0  0  0  0  0  0   0  0  0  1  0  0
