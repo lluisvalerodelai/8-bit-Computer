@@ -34,10 +34,10 @@ The computer uses a Simple As Possible (SAP) architecture, it consists of
 ## Microcode Instructions
 The control signals for each microcode instruction are generated with a ROM which contains each sub-instruction for each sub-pulse of the clock
 
-Instruction     Step    Control Work (hexadecimal representation)
+* Instruction     Step    Control Work (hexadecimal representation)
                                         AI AO BI BO ΣO SU RI RO CO JMP CE MI II IO xx xx
-Fetch - xxxx    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
-                001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0
+* Fetch - xxxx    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
+                * 001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0
 
 LDA   - 0001    000     0x0090          0  0  0  0  0  0  0  0  1  0   0  1  0  0  0  0
  -arg: addr     001     0x0128          0  0  0  0  0  0  0  1  0  0   1  0  1  0  0  0  
